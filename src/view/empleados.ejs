@@ -1,0 +1,40 @@
+<%- include('partials/head.ejs') -%>
+<h1>Lista de Empleados disponibles</h1>
+
+<div style="color: darkgrey">
+    <table class="table table-hover">
+        <thead>
+        <h5>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cargo</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </h5>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < litaEmpleados.length; i++) {%>
+                <tr>
+                    <td> <%= litaEmpleados[i].name %></td>
+                    <td> <%= litaEmpleados[i].lastname %></td>
+                    <td> <%= litaEmpleados[i].typeEmploye %></td>
+                    <td> <%= litaEmpleados[i].stated %></td>
+                    <td class="d-print-none">
+                        <a class="btn btn-sm btn-warning" href="/edit/<%= litaEmpleados[i].id %>">Cambiar Estado</a>
+                    </td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<%- include('partials/footer.ejs') -%>
+
+
